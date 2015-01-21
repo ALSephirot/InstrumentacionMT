@@ -48,14 +48,13 @@ var Instru = mongoose.model('Instru');
       var user = new Instru({
         Informacion:
         {
-          var f = new Date();
-          var fecha = (f.getDay()+"/"+f.getMonth()+"/"+f.getFullYear());
+
           evento: req.body.Informacion.evento,
           modulo: req.body.Informacion.modulo,
           detalle_evento: req.body.Informacion.detalle_evento,
           plataforma: req.body.Informacion.plataforma,
           idCelular: req.body.Informacion.idCelular,
-          Datetime: fecha
+          Datetime: req.body.Informacion.Datetime
         }
       });
 
