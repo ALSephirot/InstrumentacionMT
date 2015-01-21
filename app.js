@@ -30,12 +30,14 @@ router.get('/', function(req, res) {
 });
 
 
-app.use(router);
+
 
 router.use(function(req, res, next) {  
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
+
+app.use(router);
 
 // API routes
 var usersr = express.Router();
@@ -53,6 +55,7 @@ usersr.route('/user/:id')
 
 
 app.use('/api', usersr);
+
 var Port = process.env.PORT || 8888;
 app.listen(Port, function() {
   console.log("Node server running on http://localhost:3000. Server  With MongoDB");

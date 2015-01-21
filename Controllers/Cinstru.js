@@ -60,7 +60,7 @@ var Instru = mongoose.model('Instru');
 
       user.save(function(err) {
         if(!err) {
-          console.log('User "'+ req.body.BasicInfo.Name +'" Created Succefull');
+          console.log('User "'+ req.body.Informacion.evento +'" Created Succefull');
         } else {
           console.log('ERROR: ' + err);
         }
