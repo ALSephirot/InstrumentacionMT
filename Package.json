@@ -1,5 +1,5 @@
 {
-  "name" : "IBoletaApiRestMongo",
+  "name" : "instrumentacionMalltopic",
   "version" : "0.0.1",
   "description": "An example module to illustrate the usage of a package.json",
   "author": "Luis Eduardo Oquendo Perez <asephirotammale@gmail.com>",
@@ -12,13 +12,13 @@
 ],
   "repository": {
   "type": "git",
-  "url": "https://github.com/OJDevelopers/IBoletaApiRestTableStorage"
+  "url": "https://github.com/OJDevelopers/InstrumentacionMT"
 },
   "bugs": {
-  "url": "https://github.com/OJDevelopers/IBoletaApiRestTableStorage/issues"
+  "url": "https://github.com/OJDevelopers/InstrumentacionMT/issues"
 },
 "keywords": [
-  "IBoleta Api Rest",
+  "Api Rest",
   "Rest",
   "Api Rest"
 ],

@@ -5,7 +5,7 @@ var express         = require("express"),
     methodOverride  = require("method-override"),
     mongoose        = require('mongoose');
 
-mongoose.connect('mongodb://asephirot:ALSephirot04140324@ds053300.mongolab.com:53300/guiadb', function(err, res) {
+mongoose.connect('mongodb://Malltopic:micasita123@ds030817.mongolab.com:30817/instrumentacion', function(err, res) {
 //mongoose.connect('mongodb://localhost/GuiaDB', function(err, res) {
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
@@ -19,16 +19,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-var MUser     = require('./models/Users')(app, mongoose);
-var UsersCtrl = require('./Controllers/CUsers');
-var MTEvent     = require('./models/EventType')(app, mongoose);
-var TEventCtrl = require('./Controllers/CEventType');
+var MUser     = require('./models/instru')(app, mongoose);
+var UsersCtrl = require('./Controllers/Cinstru');
 
 
 
 var router = express.Router();
 router.get('/', function(req, res) {
-  res.send("Api Rest IBoleta With MongoDB running...");
+  res.send("Api Rest With MongoDB running...");
 });
 
 
@@ -51,28 +49,11 @@ usersr.route('/user/:id')
   .get(UsersCtrl.findUserById)
   .put(UsersCtrl.updateUser)
   .delete(UsersCtrl.deleteUser);
-
-usersr.route('/userNomUsu/:NomUsu')
-  .get(UsersCtrl.findUserByNomUsu);
 //----------Fin rutas Users-------------------//
-
-//------------Inicio rutas Event Type-----------//
-var teventr = express.Router();
-
-teventr.route('/tevent')
-  .get(TEventCtrl.findAllTEvents)
-  .post(TEventCtrl.addTEvents);
-
-teventr.route('/tevent/:id')
-  .get(TEventCtrl.findTEventsById)
-  .put(TEventCtrl.updateTEvent)
-  .delete(TEventCtrl.deleteTEvent);
-//-------------Fin rutas Event Type----------------//
 
 
 app.use('/api', usersr);
-app.use('/api',teventr);
-var Port = process.env.PORT || 8888;
+var Port = 3000;
 app.listen(Port, function() {
-  console.log("Node server running on http://localhost:3000. Server IBoleta With MongoDB");
+  console.log("Node server running on http://localhost:3000. Server  With MongoDB");
 });
