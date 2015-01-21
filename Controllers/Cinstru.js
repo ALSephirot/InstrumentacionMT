@@ -51,7 +51,7 @@ var Instru = mongoose.model('Instru');
 
           evento: req.body.Informacion.evento,
           modulo: req.body.Informacion.modulo,
-          detalle_evento: req.body.Informacion.detalle_evento,
+          detalleevento: req.body.Informacion.detalle_evento,
           plataforma: req.body.Informacion.plataforma,
           idCelular: req.body.Informacion.idCelular,
           Datetime: req.body.Informacion.Datetime
@@ -81,7 +81,7 @@ var Instru = mongoose.model('Instru');
     Instru.findById(req.params.id, function(err, user) {
       user.Informacion.evento = req.body.BasicInfo.evento,
       user.Informacion.modulo = req.body.BasicInfo.modulo,
-      user.detalle_evento = req.body.BasicInfo.detalle_evento,
+      user.detalleevento = req.body.BasicInfo.detalle_evento,
       user.plataforma = req.body.BasicInfo.plataforma,
       user.idCelular = req.body.BasicInfo.idCelular,
       user.Datetime = req.body.BasicInfo.Datetime

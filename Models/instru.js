@@ -4,7 +4,7 @@ exports = module.exports = function(app, mongoose) {
     {
       evento: String,
       modulo: String,
-      detalle_evento: String,
+      detalleevento: String,
       plataforma: String,
       idCelular: String,
       Datetime: Date
